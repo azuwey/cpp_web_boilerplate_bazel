@@ -7,22 +7,17 @@ pipeline {
         INSTALLER_PLATFORM = 'linux-x86_64'
       }
       steps {
-        sh '''set -e
-
-          # Fetch the Bazel installer
+        sh 'set -e
           URL=https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-${INSTALLER_PLATFORM}.sh
-          export BAZEL_INSTALLER=${PWD}/install.sh
+          mkdir ${PWD}/bazel-installer
+          export BAZEL_INSTALLER=${PWD}/bazel-installer/install.sh
           curl -L -o ${BAZEL_INSTALLER} ${URL}
-          BASE="${PWD}"
-
-          # Install bazel inside ${BASE}
-          bash "${BAZEL_INSTALLER}" \\\\
-            --base="${BASE}" \\\\
-            --bazelrc="${BASE}/bin/bazel.bazelrc" \\\\
+          BASE="${PWD}/bazel-installer"
+          bash "${BAZEL_INSTALLER}" \
+            --base="${BASE}" \
+            --bazelrc="${BASE}/bin/bazel.bazelrc" \
             --bin="${BASE}/binary"
-
-          # Run the build
-          BAZEL="${BASE}/binary/bazel --bazelrc=${BASE}/bin/bazel.bazelrc"'''
+          BAZEL="${BASE}/binary/bazel --bazelrc=${BASE}/bin/bazel.bazelrc --batch"'
         sh 'bazel build //main:main'
       }
     }
