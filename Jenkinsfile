@@ -22,8 +22,7 @@ bash "${BAZEL_INSTALLER}" \\
   --bin="${BASE}/binary"
 
 # Run the build
-BAZEL="${BASE}/binary/bazel --bazelrc=${BASE}/bin/bazel.bazelrc"
-  '''
+BAZEL="${BASE}/binary/bazel --bazelrc=${BASE}/bin/bazel.bazelrc"'''
         sh 'bazel build //main:main'
       }
     }
