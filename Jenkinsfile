@@ -15,9 +15,9 @@ pipeline {
           export BAZEL_INSTALLER=${PWD}/bazel-installer/install.sh
           curl -L -o ${BAZEL_INSTALLER} ${URL}
           BASE="${PWD}/bazel-installer"
-          bash "${BAZEL_INSTALLER}" --base="${BASE}" --bazelrc="${BASE}/bin/bazel.bazelrc" --bin="${BASE}/binary"
-          BAZEL="${BASE}/binary/bazel --bazelrc=${BASE}/bin/bazel.bazelrc --batch"
-          bazel build --genrule_strategy=standalone --spawn_strategy=standalone //${BASE_PACKAGE}:${SUB_PACKAGE}'''
+          bash "${BAZEL_INSTALLER}" --base="${BASE}" --bin="${BASE}/binary --prefix="${BASE}/bin"
+          BAZEL="${BASE}/binary/bazel --batch"
+          ${BAZEL} build --genrule_strategy=standalone --spawn_strategy=standalone //${BASE_PACKAGE}:${SUB_PACKAGE}'''
       }
     }
   }
