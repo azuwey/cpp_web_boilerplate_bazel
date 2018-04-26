@@ -14,10 +14,10 @@ pipeline {
           mkdir ${PWD}/bazel-installer
           export BAZEL_INSTALLER=${PWD}/bazel-installer/install.sh
           curl -L -o ${BAZEL_INSTALLER} ${URL}
-          BASE="${PWD}/bazel-installer"'''
-        sh 'bash "${BAZEL_INSTALLER}" --base="${BASE}" --bazelrc="${BASE}/bin/bazel.bazelrc" --bin="${BASE}/binary"'
-        sh '''BAZEL="${BASE}/binary/bazel --bazelrc=${BASE}/bin/bazel.bazelrc --batch"
-          bazel build //${BASE_PACKAGE}:${SUB_PACKAGE}'''
+          BASE="${PWD}/bazel-installer"
+          bash "${BAZEL_INSTALLER}" --base="${BASE}" --bazelrc="${BASE}/bin/bazel.bazelrc" --bin="${BASE}/binary"
+          BAZEL="${BASE}/binary/bazel --bazelrc=${BASE}/bin/bazel.bazelrc --batch"
+          bazel build --genrule_strategy=standalone --spawn_strategy=standalone //${BASE_PACKAGE}:${SUB_PACKAGE}'''
       }
     }
   }
