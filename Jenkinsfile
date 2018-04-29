@@ -31,5 +31,14 @@ pipeline {
         sh '${PWD}/bazel.run build --genrule_strategy=standalone --spawn_strategy=standalone //${BASE_PACKAGE}:${SUB_PACKAGE}'
       }
     }
+    stage('Clean') {
+      environment {
+        BASE_PACKAGE = 'main'
+        SUB_PACKAGE = 'main'
+      }
+      steps {
+        sh '${PWD}/bazel.run clean'
+      }
+    }
   }
 }
