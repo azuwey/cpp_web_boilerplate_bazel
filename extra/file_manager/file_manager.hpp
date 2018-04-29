@@ -1,5 +1,5 @@
-#ifndef LIB_FILE_MANAGER_HPP
-#define LIB_FILE_MANAGER_HPP
+#ifndef EXTRAS_FILE_MANAGER_HPP
+#define EXTRAS_FILE_MANAGER_HPP
 
 #include <string>
 #include <sys/stat.h>

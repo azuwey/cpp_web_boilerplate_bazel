@@ -116,3 +116,10 @@ new_git_repository(
     commit = "51ba9f1b4568dd0c22bef3c9820da48f9d6a3731",
     remote = "https://github.com/boostorg/utility.git",
 )
+
+new_git_repository(
+    name = "com_github_google_googletest",
+    build_file = "build/google_googletest.BUILD",
+    commit = "dc043e1ca6bd509a92452ed54e817b6979869372",
+    remote = "https://github.com/google/googletest.git",
+)
