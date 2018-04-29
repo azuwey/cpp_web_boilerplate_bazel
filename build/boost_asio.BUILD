@@ -15,7 +15,7 @@ cc_library(
   srcs = [
   ],
   deps = [
-      "@com_github_boost_bin//:bind",
+      "@com_github_boost_bind//:bind",
       "@com_github_boost_date_time//:date_time",
       "@com_github_boost_fusion//:fusion",
       "@com_github_boost_system//:system",
