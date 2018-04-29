@@ -16,6 +16,7 @@ cc_library(
   ],
   deps = [
       "@com_github_boost_fusion//:fusion",
-      "@com_github_boost_system//:system"
+      "@com_github_boost_system//:system",
+      "@com_github_boost_system//:throw_exception"
   ]
 )
