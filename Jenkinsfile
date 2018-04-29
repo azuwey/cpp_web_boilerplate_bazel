@@ -32,10 +32,6 @@ pipeline {
       }
     }
     stage('Clean') {
-      environment {
-        BASE_PACKAGE = 'main'
-        SUB_PACKAGE = 'main'
-      }
       steps {
         sh '${PWD}/bazel.run clean'
       }
