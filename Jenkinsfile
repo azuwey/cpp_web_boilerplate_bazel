@@ -17,17 +17,13 @@ pipeline {
       }
     }
     stage('Run database test') {
-      parallel {
-        stage('Run database test') {
-          steps {
-            sh '${BAZEL} test //test:database-test --test_verbose_timeout_warnings'
-          }
-        }
-        stage('Build') {
-          steps {
-            sh '${BAZEL} build --genrule_strategy=standalone --spawn_strategy=standalone //${BASE_PACKAGE}:${SUB_PACKAGE}'
-          }
-        }
+      steps {
+        sh '${PWD}/bazel.run test //test:database-test --test_verbose_timeout_warnings'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh '${PWD}/bazel.run build --genrule_strategy=standalone --spawn_strategy=standalone //${BASE_PACKAGE}:${SUB_PACKAGE}'
       }
     }
   }
