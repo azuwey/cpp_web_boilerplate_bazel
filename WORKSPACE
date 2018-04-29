@@ -53,3 +53,10 @@ new_git_repository(
     commit = "855fc9601066eb05addea8ce66a3fc7b52b08427",
     remote = "https://github.com/boostorg/system.git",
 )
+
+new_git_repository(
+    name = "com_github_boost_throw_exception",
+    build_file = "build/boost_throw_exception.BUILD",
+    commit = "56d65d5f625ed118f6052cc8f924f8ec21913089",
+    remote = "https://github.com/boostorg/throw_exception.git",
+)
