@@ -3,7 +3,7 @@ package(default_visibility = ["//visibility:public"])
 licenses(["notice"])
 
 cc_library(
-  name = "asio",
+  name = "date_time",
   includes = [
       "include/",
   ],
@@ -12,12 +12,13 @@ cc_library(
       "include/boost/**/*.hpp",
       "include/boost/**/*.ipp",
   ]),
-  srcs = [
-  ],
+    linkopts = ["-pthread", "-lrt"],
+  srcs = glob([
+  	"src/*.cpp"
+  ]),
   deps = [
-      "@com_github_boost_fusion//:fusion",
-      "@com_github_boost_system//:system",
-      "@com_github_boost_throw_exception//:throw_exception",
-      "@com_github_boost_date_time//:date_time"
+      "@com_github_boost_mpl//:mpl",
+      "@com_github_boost_smart_ptr//:smart_ptr",
+      "@com_github_boost_utility//:utility",
   ]
 )
