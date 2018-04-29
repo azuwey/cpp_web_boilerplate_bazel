@@ -13,6 +13,13 @@ new_git_repository(
 )
 
 new_git_repository(
+    name = "com_github_boost_bind",
+    build_file = "build/boost_bind.BUILD",
+    commit = "d6abae3bd6137c3491d779130b09618f14b23e33",
+    remote = "https://github.com/boostorg/bind.git",
+)
+
+new_git_repository(
     name = "com_github_boost_config",
     build_file = "build/boost_config.BUILD",
     commit = "0cdf4a5da8f2569061721abfeb3a43456cb060dc",
