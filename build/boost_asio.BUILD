@@ -18,6 +18,7 @@ cc_library(
       "@com_github_boost_bind//:bind",
       "@com_github_boost_date_time//:date_time",
       "@com_github_boost_fusion//:fusion",
+      "@com_github_boost_regex//:regex",
       "@com_github_boost_system//:system",
       "@com_github_boost_throw_exception//:throw_exception"
   ]

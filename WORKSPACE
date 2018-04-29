@@ -69,6 +69,13 @@ new_git_repository(
 )
 
 new_git_repository(
+    name = "com_github_boost_regex",
+    build_file = "build/boost_regex.BUILD",
+    commit = "dfc1c46ecedef21274eb142e267e91400aa33ec8",
+    remote = "https://github.com/boostorg/regex.git",
+)
+
+new_git_repository(
     name = "com_github_boost_smart_ptr",
     build_file = "build/boost_smart_ptr.BUILD",
     commit = "a054a570c11bd1ac9e89b849cd7636f4b3341e4c",
