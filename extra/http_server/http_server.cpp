@@ -1,6 +1,6 @@
 #include "http_server.hpp"
 
-namespace libs {
+namespace extras {
 Http_server::Http_server(unsigned short port) {
   _server.config.port = 8080;
   std::thread server_thread([&]() {
@@ -11,4 +11,4 @@ Http_server::Http_server(unsigned short port) {
   server_thread.join();
   std::cout << "Server is 'started'..." << std::endl;
 }
-} // namespace libs
+} // namespace extras

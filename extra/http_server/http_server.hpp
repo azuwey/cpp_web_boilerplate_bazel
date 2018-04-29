@@ -1,5 +1,5 @@
-#ifndef LIB_HTTP_SERVER_HPP
-#define LIB_HTTP_SERVER_HPP
+#ifndef EXTRAS_HTTP_SERVER_HPP
+#define EXTRAS_HTTP_SERVER_HPP
 
 #include "../../lib/simple_http_server/server_http.hpp"
 #include <iostream>
@@ -7,7 +7,7 @@
 
 using HttpServer = SimpleWeb::Server<SimpleWeb::HTTP>;
 
-namespace libs {
+namespace extras {
 class Http_server {
 private:
   HttpServer _server;
@@ -15,5 +15,5 @@ private:
 public:
   Http_server(unsigned short);
 };
-} // namespace libs
+} // namespace extras
 #endif
