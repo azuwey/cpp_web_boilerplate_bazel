@@ -10,13 +10,10 @@ pipeline {
       }
       steps {
         sh '''set -e
-          URL=https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-${INSTALLER_PLATFORM}.sh
-          mkdir ${PWD}/bazel-installer
-          export BAZEL_INSTALLER=${PWD}/bazel-installer/install.sh
-          curl -L -o ${BAZEL_INSTALLER} ${URL}
-          BASE="${PWD}/bazel-installer"
-          bash "${BAZEL_INSTALLER}" --base="${BASE}" --bin="${BASE}/binary --prefix="${BASE}/bin"
-          BAZEL="${BASE}/binary/bazel --batch"
+          URL=https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-${INSTALLER_PLATFORM}
+          export BAZEL=${PWD}/bazel.run
+          curl -L -o ${BAZEL} ${URL}
+          chmod +x ${BAZEL}
           ${BAZEL} build --genrule_strategy=standalone --spawn_strategy=standalone //${BASE_PACKAGE}:${SUB_PACKAGE}'''
       }
     }
