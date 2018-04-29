@@ -18,6 +18,5 @@ cc_library(
     srcs = glob(['simple_http_server/*.cpp']),
     hdrs = glob(['simple_http_server/*.hpp']),
     visibility = ["//extra:__pkg__"],
-    linkopts = ["-lboost_system"],
     deps = ["@com_github_boost_asio//:asio"]
 )
