@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Create sandbox environment') {
       environment {
-        BAZEL_VERSION = '0.12.0'
+        BAZEL_VERSION = '0.13.0'
         PLATFORM = 'linux-x86_64'
       }
       steps {
