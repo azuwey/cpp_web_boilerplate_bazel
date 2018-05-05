@@ -12,8 +12,6 @@ cc_library(
       "include/boost/**/*.hpp",
       "include/boost/**/*.ipp",
   ]),
-  srcs = [
-  ],
   deps = [
       "@com_github_boost_bind//:bind",
       "@com_github_boost_date_time//:date_time",

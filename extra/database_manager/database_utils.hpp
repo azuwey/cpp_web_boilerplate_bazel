@@ -3,10 +3,10 @@
 
 #include <list>
 
-namespace extras {
+namespace extra {
 struct s_table {
   const char *table_name;
   std::list<const char *> columns;
 };
-} // namespace extras
+} // namespace extra
 #endif

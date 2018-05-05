@@ -1,6 +1,6 @@
 #include "file_manager.hpp"
 
-namespace extras {
+namespace extra {
 namespace file_manager {
 int create_folder(std::string path) {
 #if defined(_WIN32)
@@ -20,4 +20,4 @@ std::string get_path_from_file_path(std::string file_path) {
 #endif
 }
 } // namespace file_manager
-} // namespace extras
+} // namespace extra

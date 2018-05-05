@@ -1,10 +1,10 @@
-#ifndef EXTRAS_UTILS_HPP
-#define EXTRAS_UTILS_HPP
+#ifndef EXTRAS_STRING_JOIN_HPP
+#define EXTRAS_STRING_JOIN_HPP
 
 #include <sstream>
 #include <string>
 
-namespace extras {
+namespace extra {
 template <typename InputIt>
 std::string string_join(InputIt begin, InputIt end,
                         const std::string &separator = ", ",
@@ -20,5 +20,5 @@ std::string string_join(InputIt begin, InputIt end,
   ss << concluder;
   return ss.str();
 };
-} // namespace extras
+} // namespace extra
 #endif

@@ -12,7 +12,7 @@ cc_library(
       "include/boost/**/*.hpp",
       "include/boost/**/*.ipp",
   ]),
-    linkopts = ["-pthread", "-lrt"],
+  linkopts = ["-pthread", "-lrt"],
   srcs = glob([
   	"src/*.cpp"
   ]),

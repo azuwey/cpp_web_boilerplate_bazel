@@ -10,7 +10,7 @@
 #include <sstream>
 #include <string>
 
-namespace extras {
+namespace extra {
 class Database_manager {
 private:
   sqlite3 *_db;
@@ -22,5 +22,5 @@ public:
   int close_database();
   int set_scheme(std::list<s_table> &, bool);
 };
-} // namespace extras
+} // namespace extra
 #endif

@@ -5,7 +5,7 @@
 
 #define DB_FILE_URI "db/test.db"
 
-extras::Database_manager db_manager(DB_FILE_URI);
+extra::Database_manager db_manager(DB_FILE_URI);
 
 TEST(database_manager, open_database) {
   EXPECT_EQ(db_manager.open_database(), SQLITE_OK);
@@ -16,8 +16,8 @@ TEST(database_manager, close_database) {
 }
 
 TEST(database_manager, set_scheme) {
-  std::list<extras::s_table> scheme;
-  extras::s_table test_table;
+  std::list<extra::s_table> scheme;
+  extra::s_table test_table;
   test_table.table_name = "test_users";
   test_table.columns.push_back("ID NOT NULL INTEGER PRIMARY KEY");
   test_table.columns.push_back("name text NOT NULL");

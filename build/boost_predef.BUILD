@@ -10,9 +10,5 @@ cc_library(
   hdrs = glob([
     "include/boost/**/*.h",
     "include/boost/**/*.hpp",
-  ]),
-  srcs = [
-  ],
-  deps = [
-  ]
+  ])
 )

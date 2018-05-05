@@ -10,8 +10,6 @@ cc_library(
   hdrs = glob([
     "include/boost/**/*.hpp",
   ]),
-  srcs = [
-  ],
   deps = [
       "@com_github_boost_core//:core",
   ]
