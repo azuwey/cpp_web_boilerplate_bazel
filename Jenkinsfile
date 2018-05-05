@@ -14,12 +14,9 @@ pipeline {
           chmod +x ${BAZEL}'''
       }
     }
-    stage('Run database test') {
-      environment {
-        TEST_PACKAGE = 'database-test'
-      }
+    stage('Run tests') {
       steps {
-        sh '${PWD}/bazel.run test //test:${TEST_PACKAGE} --test_verbose_timeout_warnings'
+        sh '${PWD}/bazel.run test $(${PWD}/bazel.run query //...) --test_verbose_timeout_warnings'
       }
     }
     stage('Build') {
